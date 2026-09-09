@@ -1,0 +1,2 @@
+# AI Chat Log
+I used ChatGpt as a guide while completing my command line maze. I chose the history of basketball as my topic and created the maze structure and files myself. ChatGPT helped me troubleshoot Powershell commands and make sure I was following the assignment requirments. I also used ChatGPT to help with some of the clues.
