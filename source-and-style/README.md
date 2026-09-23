@@ -12,6 +12,6 @@ Wikimedia Commons is part of the Wikimedia projects and is supported by the Wiki
 Wikimedia Commons is useful for my project because it has images that can help me study discrimination and representation in basketball. I can use these images to look at how African American players, teams, and basketball communities have been represented over time.
 
 ## Sources
-- Wikimedia Commons
-- MediaWiki GitHub Repository
+- Wikimedia Commons(https://commons.wikimedia.org/)
+- MediaWiki GitHub Repository(https://hithub.com/wikimedia/mediawiki)
 - IS 310: Introduction to Markup and Styling Web Documents
