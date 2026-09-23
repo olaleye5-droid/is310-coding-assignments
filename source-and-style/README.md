@@ -13,5 +13,5 @@ Wikimedia Commons is useful for my project because it has images that can help m
 
 ## Sources
 - Wikimedia Commons(https://commons.wikimedia.org/)
-- MediaWiki GitHub Repository(https://hithub.com/wikimedia/mediawiki)
+- MediaWiki GitHub Repository(https://github.com/wikimedia/mediawiki)
 - IS 310: Introduction to Markup and Styling Web Documents
