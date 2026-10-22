@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WNBA Gender Inequality Research</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #f4f4f8;
+      color: #222;
+    }
+
+    h1, h2 {
+      color: #552583;
+    }
+
+    form, .record, .saved-record {
+      background: white;
+      padding: 18px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 85px;
+      resize: vertical;
+    }
+
+    button {
+      background: #552583;
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      margin: 10px 6px 0 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #38145a;
+    }
+
+    .secondary {
+      background: #555;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .note {
+      background: #eee5f7;
+      padding: 12px;
+      border-radius: 5px;
+    }
+
+    a {
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <h1>WNBA Gender Inequality Research</h1>
+
+  <p>
+    This project collects documented events and public accounts
+    concerning gender inequality in the WNBA. Each entry preserves
+    its source, context, documented responses, and uncertainty.
+  </p>
+
+  <p class="note">
+    Important: A claim in a source is not automatically proof of
+    discrimination. Record what the source reports and distinguish
+    evidence from your own interpretation.
+  </p>
+
+  <h2>Enter a Research Record</h2>
+
+  <form id="researchForm">
+    <label for="eventTitle">Event title *</label>
+    <input id="eventTitle" required>
+
+    <label for="date">Date or approximate year *</label>
+    <input id="date" placeholder="e.g., 2024 or June 2024" required>
+
+    <label for="institution">WNBA team or institution involved *</label>
+    <input id="institution" required>
+
+    <label for="category">Issue category *</label>
+    <select id="category" required>
+      <option value="">Select a category</option>
+      <option>Compensation</option>
+      <option>Working conditions</option>
+      <option>Media representation</option>
+      <option>Leadership and opportunities</option>
+      <option>Other</option>
+    </select>
+
+    <label for="sourceTitle">Source title *</label>
+    <input id="sourceTitle" required>
+
+    <label for="sourceUrl">Source URL *</label>
+    <input id="sourceUrl" type="url"
+           placeholder="https://..." required>
+
+    <label for="description">What does the source report? *</label>
+    <textarea id="description" required></textarea>
+
+    <label for="response">Documented response</label>
+    <textarea id="response"
+      placeholder="Record a documented response, or state Not found."></textarea>
+
+    <label for="context">Uncertainty or additional context</label>
+    <textarea id="context"
+      placeholder="What is unclear, disputed, or missing?"></textarea>
+
+    <button type="submit">Review Record</button>
+  </form>
+
+  <section id="review" class="record hidden">
+    <h2>Review Before Confirming</h2>
+    <div id="reviewContent"></div>
+    <button id="confirmButton">Confirm Record</button>
+    <button id="editButton" class="secondary">Edit Record</button>
+  </section>
+
+  <h2>Confirmed Records (<span id="count">0</span>)</h2>
+  <div id="records"></div>
+
+  <button id="downloadButton">Download Confirmed Records as JSON</button>
+  <button id="clearButton" class="secondary">Clear All Records</button>
+
+  <script>
+    const form = document.getElementById("researchForm");
+    const review = document.getElementById("review");
+    const reviewContent = document.getElementById("reviewContent");
+    const recordsContainer = document.getElementById("records");
+    const count = document.getElementById("count");
+
+    let pendingRecord = null;
+    let records = [];
+
+    const fields = [
+      ["eventTitle", "event_title"],
+      ["date", "date"],
+      ["institution", "institution_involved"],
+      ["category", "issue_category"],
+      ["sourceTitle", "source_title"],
+      ["sourceUrl", "source_url"],
+      ["description", "source_description"],
+      ["response", "documented_response"],
+      ["context", "uncertainty_context"]
+    ];
+
+    function getFormRecord() {
+      const record = {};
+
+      fields.forEach(([elementId, key]) => {
+        record[key] =
+          document.getElementById(elementId).value.trim();
+      });
+
+      if (!record.documented_response) {
+        record.documented_response = "Not provided";
+      }
+
+      if (!record.uncertainty_context) {
+        record.uncertainty_context = "Not provided";
+      }
+
+      return record;
+    }
+
+    function showReview(record) {
+      reviewContent.replaceChildren();
+
+      fields.forEach(([elementId, key]) => {
+        const label = document.createElement("strong");
+        label.textContent = key.replaceAll("_", " ") + ": ";
+
+        const value = document.createElement("p");
+        value.textContent = record[key] || "Not provided";
+
+        reviewContent.append(label, value);
+      });
+
+      review.classList.remove("hidden");
+      review.scrollIntoView({ behavior: "smooth" });
+    }
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      pendingRecord = getFormRecord();
+      showReview(pendingRecord);
+    });
+
+    document.getElementById("confirmButton")
+      .addEventListener("click", function() {
+        if (!pendingRecord) return;
+
+        records.push(pendingRecord);
+        pendingRecord = null;
+        review.classList.add("hidden");
+        form.reset();
+        renderRecords();
+      });
+
+    document.getElementById("editButton")
+      .addEventListener("click", function() {
+        if (!pendingRecord) return;
+
+        fields.forEach(([elementId, key]) => {
+          document.getElementById(elementId).value =
+            pendingRecord[key] || "";
+        });
+
+        review.classList.add("hidden");
+        form.scrollIntoView({ behavior: "smooth" });
+      });
+
+    function renderRecords() {
+      recordsContainer.replaceChildren();
+      count.textContent = records.length;
+
+      records.forEach((record, index) => {
+        const card = document.createElement("div");
+        card.className = "saved-record";
+
+        const heading = document.createElement("h3");
+        heading.textContent = `${index + 1}. ${record.event_title}`;
+        card.appendChild(heading);
+
+        const details = document.createElement("p");
+        details.textContent =
+          `${record.date} | ${record.institution_involved} | ` +
+          record.issue_category;
+        card.appendChild(details);
+
+        const source = document.createElement("a");
+        source.href = record.source_url;
+        source.target = "_blank";
+        source.rel = "noopener noreferrer";
+        source.textContent = record.source_title;
+        card.appendChild(source);
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove Record";
+        removeButton.addEventListener("click", function() {
+          records.splice(index, 1);
+          renderRecords();
+        });
+
+        card.appendChild(removeButton);
+        recordsContainer.appendChild(card);
+      });
+    }
+
+    document.getElementById("downloadButton")
+      .addEventListener("click", function() {
+        if (records.length === 0) {
+          alert("Please confirm at least one record first.");
+          return;
+        }
+
+        const data = JSON.stringify(records, null, 2);
+        const blob = new Blob([data], {
+          type: "application/json"
+        });
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "basketball_data.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+    document.getElementById("clearButton")
+      .addEventListener("click", function() {
+        if (records.length === 0) return;
+
+        if (confirm("Remove all confirmed records from this page?")) {
+          records = [];
+          pendingRecord = null;
+          review.classList.add("hidden");
+          renderRecords();
+        }
+      });
+  </script>
+</body>
+</html>

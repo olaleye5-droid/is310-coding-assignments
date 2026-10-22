@@ -1,0 +1,46 @@
+[
+  {
+    "event_title": "2020 WNBA Collective Bargaining Agreement",
+    "date": "January 14, 2020",
+    "institution_involved": "WNBA and Women's National Basketball Players Association (WNBPA)",
+    "issue_category": "Working conditions",
+    "source_title": "WNBA And WNBPA Reach Tentative Agreement On Groundbreaking Eight-Year Collective Bargaining Agreement",
+    "source_url": "https://www.wnba.com/news/wnba-and-wnbpa-reach-tentative-agreement-on-groundbreaking-eight-year-collective-bargaining-agreement?",
+    "source_description": "On January 14, 2020, the WNBA and WNBPA announced a tentative collective bargaining agreement that included increased player compensation, improved travel standards, maternity benefits, childcare support, and other workplace benefits. The announcement describes negotiated changes to player employment conditions.",
+    "documented_response": "The WNBA and WNBPA announced the tentative agreement jointly. The announcement described the negotiated changes and the organizations' stated goals for improving compensation and the player experience.",
+    "uncertainty_context": "This is an official announcement from the negotiating organizations, so it reflects their account of the agreement. It does not independently establish discrimination or explain every reason for the prior working conditions. The agreement was tentative when announced."
+  },
+  {
+    "event_title": "Change in WNBA maternity-leave pay under the 2020 CBA",
+    "date": "January 14, 2020",
+    "institution_involved": "WNBA and Women's National Basketball Players Association (WNBPA)",
+    "issue_category": "Working conditions",
+    "source_title": "Transcript – WNBA-WNBPA Conference Call",
+    "source_url": "https://www.wnba.com/news/transcript-wnba-wnbpa-conference-call?",
+    "source_description": "The conference-call transcript states that the previous maternity-leave guideline provided half of a player's salary. Under the 2020 agreement, the league committed to full salary during maternity leave. The transcript also discusses expanded family-planning and childcare benefits.",
+    "documented_response": "The WNBA and WNBPA negotiated a new collective bargaining agreement that expanded maternity and family benefits for players.",
+    "uncertainty_context": "This is an official transcript of the negotiating organizations' statements, not an independent investigation. It documents a change in employment benefits but does not by itself establish discriminatory intent or explain every player's experience under the previous policy."
+  },
+  {
+    "event_title": "Dearica Hamby's Pregnancy Discrimination Complaint Against the Las Vegas Aces",
+    "date": "September 2023",
+    "institution_involved": "Las Vegas Aces; WNBA",
+    "issue_category": "Working conditions",
+    "source_title": "WNBA player files discrimination claim over treatment during pregnancy",
+    "source_url": "https://www.washingtonpost.com/sports/2023/10/04/dearica-hamby-aces-pregnancy-becky-hammon/",
+    "source_description": "The Washington Post reported that Dearica Hamby filed a gender discrimination complaint with the Equal Employment Opportunity Commission in 2023. Hamby alleged that after she disclosed her pregnancy, the Las Vegas Aces' coach questioned her pregnancy and commitment to the team, and that she was subsequently traded to the Los Angeles Sparks.",
+    "documented_response": "The WNBA said it investigated and imposed a two-game suspension on coach Becky Hammon. It also rescinded the Aces' 2025 first-round draft pick for a violation of league rules concerning impermissible player benefits. The league said its discipline was based on its investigation.",
+    "uncertainty_context": "Hamby's discrimination allegations must be distinguished from the league's findings about rule violations. In its May 6, 2025 order, the federal court denied the Aces' motion to dismiss Hamby's pregnancy-discrimination claims, allowing those claims to proceed at that stage; this was not a final finding that discrimination occurred."
+  },
+  {
+    "event_title": "Dearica Hamby's Pregnancy Discrimination Complaint",
+    "date": "2023",
+    "institution_involved": "Las Vegas Aces; WNBA",
+    "issue_category": "wokring conditions",
+    "source_title": "Washington Post report on Dearica Hamby's discrimination complaint",
+    "source_url": "https://www.washingtonpost.com/sports/2023/10/04/dearica-hamby-aces-pregnancy-becky-hammon/",
+    "source_description": "Hamby alleged that she experienced unfair treatment after disclosing her pregnancy.",
+    "documented_response": "The WNBA investigated and announced disciplinary action against the Aces coach.",
+    "uncertainty_context": "These are reported allegations; the record should distinguish them from final legal findings."
+  }
+]
