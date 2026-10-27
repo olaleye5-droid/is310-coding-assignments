@@ -42,5 +42,16 @@
     "source_description": "Hamby alleged that she experienced unfair treatment after disclosing her pregnancy.",
     "documented_response": "The WNBA investigated and announced disciplinary action against the Aces coach.",
     "uncertainty_context": "These are reported allegations; the record should distinguish them from final legal findings."
-  }
+  },
+  {
+  "event_title": "WNBA Announces Full-Time Charter Flights for All Teams",
+  "date": "2024-05-09",
+  "institution": "WNBA",
+  "issue_category": "Working conditions",
+  "source_title": "WNBA Set to Institute Full Charter Program During 2024 Season",
+  "source_url": "https://www.wnba.com/webview/news/charter-flight-program-2024",
+  "source_description": "The WNBA announced a league-wide charter flight program beginning during the 2024 season. The policy addressed player travel conditions, health, safety, and the experience of traveling between games.",
+  "documented_response": "The league announced that the charter program would be phased in during the 2024 season, with the goal of providing charter travel across all teams.",
+  "uncertainty_context": "The official announcement documents the league's policy and stated reasons for the change, but it does not independently establish how previous travel conditions affected every player or whether all inequalities in player working conditions were resolved."
+}
 ]
