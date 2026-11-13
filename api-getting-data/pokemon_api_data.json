@@ -1,0 +1,125 @@
+{
+    "research_subject": "pikachu",
+    "wiki_api": {
+        "source": "https://pokemon.fandom.com/api.php",
+        "results": [
+            {
+                "ns": 0,
+                "title": "Pikachu-family Pokémon",
+                "pageid": 98836,
+                "size": 10667,
+                "wordcount": 1534,
+                "snippet": "",
+                "timestamp": "2026-07-26T22:23:25Z"
+            },
+            {
+                "ns": 0,
+                "title": "Pikachu",
+                "pageid": 206,
+                "size": 38616,
+                "wordcount": 5859,
+                "snippet": "",
+                "timestamp": "2026-10-20T18:59:18Z"
+            },
+            {
+                "ns": 0,
+                "title": "Ash's Pikachu/Sun & Moon",
+                "pageid": 272475,
+                "size": 23421,
+                "wordcount": 3654,
+                "snippet": "",
+                "timestamp": "2026-05-31T10:25:23Z"
+            },
+            {
+                "ns": 0,
+                "title": "Ash's Pikachu",
+                "pageid": 5078,
+                "size": 22996,
+                "wordcount": 3472,
+                "snippet": "",
+                "timestamp": "2026-11-11T11:03:35Z"
+            },
+            {
+                "ns": 0,
+                "title": "Pokémon Pikachu",
+                "pageid": 58751,
+                "size": 1288,
+                "wordcount": 205,
+                "snippet": "",
+                "timestamp": "2026-10-04T17:11:31Z"
+            },
+            {
+                "ns": 0,
+                "title": "Pikachu (Super Smash Bros.)",
+                "pageid": 254264,
+                "size": 28111,
+                "wordcount": 4599,
+                "snippet": "",
+                "timestamp": "2026-06-20T08:38:27Z"
+            },
+            {
+                "ns": 0,
+                "title": "Ash's Pikachu/XY and XYZ",
+                "pageid": 272474,
+                "size": 9520,
+                "wordcount": 1471,
+                "snippet": "",
+                "timestamp": "2026-01-12T23:38:24Z"
+            },
+            {
+                "ns": 0,
+                "title": "Hey You, Pikachu!",
+                "pageid": 10560,
+                "size": 31460,
+                "wordcount": 5227,
+                "snippet": "",
+                "timestamp": "2026-08-22T14:02:58Z"
+            },
+            {
+                "ns": 0,
+                "title": "PK007: Pikachu & Pichu",
+                "pageid": 90583,
+                "size": 5304,
+                "wordcount": 750,
+                "snippet": "",
+                "timestamp": "2026-06-05T00:15:04Z"
+            },
+            {
+                "ns": 0,
+                "title": "Pikachu (Base Set)",
+                "pageid": 169679,
+                "size": 4619,
+                "wordcount": 717,
+                "snippet": "",
+                "timestamp": "2025-12-10T16:33:03Z"
+            }
+        ]
+    },
+    "pokeapi": {
+        "source": "https://pokeapi.co/api/v2/pokemon/pikachu",
+        "pokemon": {
+            "name": "pikachu",
+            "height": 4,
+            "weight": 60,
+            "types": [
+                "electric"
+            ],
+            "abilities": [
+                "static",
+                "lightning-rod"
+            ],
+            "stats": {
+                "hp": 35,
+                "attack": 55,
+                "defense": 40,
+                "special-attack": 50,
+                "special-defense": 50,
+                "speed": 90
+            }
+        }
+    },
+    "connection": {
+        "matched": true,
+        "matching_wiki_title": "Pikachu"
+    }
+}
